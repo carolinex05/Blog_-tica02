@@ -4,46 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Luz na Dermatologia - Guia & Certificações</title>
+    
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+    
     <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Fonts Google -->
+    
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
-    <style>
-        body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-        }
-
-        .glow-blue {
-            box-shadow: 0 0 25px rgba(59, 130, 246, 0.35);
-        }
-
-        .glow-red {
-            box-shadow: 0 0 25px rgba(239, 68, 68, 0.35);
-        }
-
-        .glow-amber {
-            box-shadow: 0 0 25px rgba(245, 158, 11, 0.35);
-        }
-
-        .glow-purple {
-            box-shadow: 0 0 25px rgba(168, 85, 247, 0.35);
-        }
-
-        .page-transition {
-            transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
-        }
-
-        .tab-btn.active {
-            color: #0284c7;
-            border-bottom: 3px solid #0284c7;
-            font-weight: 700;
-        }
-    </style>
+    
+    <!-- Estilos Customizados Externos -->
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body class="bg-slate-50 text-slate-800 flex flex-col min-h-screen">
 
@@ -326,4 +299,32 @@
 
                     <!-- Dicas Pós-Tratamento -->
                     <div class="bg-indigo-50/60 rounded-3xl p-8 border border-indigo-100">
-                        <div
+                        <div class="flex items-center gap-3 mb-6">
+                            <div class="w-10 h-10 rounded-xl bg-indigo-600 text-white flex items-center justify-center text-lg">
+                                <i class="fa-solid fa-heart-pulse"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-indigo-950">Dicas Pós-Tratamento com Luz</h3>
+                        </div>
+                        <ul class="space-y-4 text-sm text-slate-700">
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-circle-check text-indigo-600 mt-0.5"></i>
+                                <span><strong>Filtro solar rigoroso:</strong> Aplique protetor de amplo espectro (FPS 50+) a cada 3 horas, mesmo em ambientes fechados.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-circle-check text-indigo-600 mt-0.5"></i>
+                                <span><strong>Hidratação regeneradora:</strong> Use dermocosméticos calmantes com pantenol ou ácido hialurônico para restaurar a barreira cutânea.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-circle-check text-indigo-600 mt-0.5"></i>
+                                <span><strong>Não remova casquinhas:</strong> Em tratamentos ablativos, deixe as microcrostas caírem naturalmente para evitar cicatrizes.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+</body>
+</html>
