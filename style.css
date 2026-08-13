@@ -1,0 +1,32 @@
+
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        .glow-blue {
+            box-shadow: 0 0 25px rgba(59, 130, 246, 0.35);
+        }
+
+        .glow-red {
+            box-shadow: 0 0 25px rgba(239, 68, 68, 0.35);
+        }
+
+        .glow-amber {
+            box-shadow: 0 0 25px rgba(245, 158, 11, 0.35);
+        }
+
+        .glow-purple {
+            box-shadow: 0 0 25px rgba(168, 85, 247, 0.35);
+        }
+
+        .page-transition {
+            transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+        }
+
+        .tab-btn.active {
+            color: #0284c7;
+            border-bottom: 3px solid #0284c7;
+            font-weight: 700;
+        }
+    </style>
