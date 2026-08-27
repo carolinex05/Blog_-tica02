@@ -3,19 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Luz na Dermatologia - Guia & Certificações</title>
+    <title>LuzDermo - Guia & Fototerapia</title>
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
     <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    
-    <!-- Estilos Customizados Externos -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Estilos Customizados -->
     <link rel="stylesheet" href="styles.css">
 </head>
 <body class="bg-slate-50 text-slate-800 flex flex-col min-h-screen">
@@ -23,8 +21,7 @@
     <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200 shadow-sm">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
-                <!-- Logo -->
-                <div class="flex items-center space-x-3 cursor-pointer" onclick="navigateTo('dicas')">
+                <a href="index.html" class="flex items-center space-x-3">
                     <div class="w-11 h-11 rounded-2xl bg-gradient-to-tr from-cyan-500 via-sky-600 to-indigo-600 flex items-center justify-center text-white shadow-lg shadow-cyan-500/30">
                         <i class="fa-solid fa-wand-magic-sparkles text-xl"></i>
                     </div>
@@ -32,21 +29,19 @@
                         <span class="text-xl font-extrabold bg-gradient-to-r from-sky-700 via-indigo-700 to-purple-700 bg-clip-text text-transparent">LuzDermo</span>
                         <span class="block text-xs font-semibold text-slate-500 tracking-wider uppercase">Tecnologia & Fototerapia</span>
                     </div>
-                </div>
+                </a>
 
-                <!-- Navegação entre Páginas -->
                 <nav class="hidden md:flex space-x-8">
-                    <button id="nav-btn-dicas" onclick="navigateTo('dicas')" class="tab-btn active py-2 text-slate-600 hover:text-sky-600 font-medium transition-all flex items-center gap-2">
+                    <a href="index.html" class="tab-btn active py-2 text-slate-600 hover:text-sky-600 font-medium transition-all flex items-center gap-2">
                         <i class="fa-solid fa-lightbulb"></i>
-                        <span>Página 1: Dicas & Guia de Luzes</span>
-                    </button>
-                    <button id="nav-btn-profissionais" onclick="navigateTo('profissionais')" class="tab-btn py-2 text-slate-600 hover:text-sky-600 font-medium transition-all flex items-center gap-2">
-                        <i class="fa-solid fa-user-doctor"></i>
-                        <span>Página 2: Certificações & Médicos</span>
-                    </button>
+                        <span>Guia de Luzes & Simulador</span>
+                    </a>
+                    <a href="sobre.html" class="tab-btn py-2 text-slate-600 hover:text-sky-600 font-medium transition-all flex items-center gap-2">
+                        <i class="fa-solid fa-circle-info"></i>
+                        <span>Sobre & Infográfico Excimer</span>
+                    </a>
                 </nav>
 
-                <!-- Botão de Ação Rápida -->
                 <div class="hidden sm:flex items-center gap-3">
                     <button onclick="openValidationModal()" class="px-4 py-2.5 text-xs font-bold uppercase tracking-wider text-sky-700 bg-sky-50 hover:bg-sky-100 rounded-xl transition border border-sky-200 flex items-center gap-2">
                         <i class="fa-solid fa-shield-halved"></i>
@@ -54,34 +49,29 @@
                     </button>
                 </div>
 
-                <!-- Botão Menu Mobile -->
-                <button onclick="toggleMobileMenu()" class="md:hidden p-2 rounded-lg text-slate-600 hover:bg-slate-100 focus:outline-none">
+                <button onclick="toggleMobileMenu()" class="md:hidden p-2 rounded-lg text-slate-600 hover:bg-slate-100 focus:outline-none" aria-label="Abrir menu">
                     <i class="fa-solid fa-bars text-xl"></i>
                 </button>
             </div>
         </div>
 
-        <!-- Menu Mobile Dropdown -->
         <div id="mobile-menu" class="hidden md:hidden border-t border-slate-200 bg-white px-4 pt-3 pb-6 space-y-3 shadow-lg">
-            <button onclick="navigateTo('dicas'); toggleMobileMenu();" class="w-full text-left py-3 px-4 rounded-xl hover:bg-slate-50 font-semibold text-slate-700 flex items-center gap-3">
+            <a href="index.html" class="w-full text-left py-3 px-4 rounded-xl hover:bg-slate-50 font-semibold text-slate-700 flex items-center gap-3">
                 <i class="fa-solid fa-lightbulb text-sky-600"></i>
-                <span>Página 1: Dicas & Guia de Luzes</span>
-            </button>
-            <button onclick="navigateTo('profissionais'); toggleMobileMenu();" class="w-full text-left py-3 px-4 rounded-xl hover:bg-slate-50 font-semibold text-slate-700 flex items-center gap-3">
-                <i class="fa-solid fa-user-doctor text-indigo-600"></i>
-                <span>Página 2: Certificações & Especialistas</span>
-            </button>
+                <span>Guia de Luzes & Simulador</span>
+            </a>
+            <a href="sobre.html" class="w-full text-left py-3 px-4 rounded-xl hover:bg-slate-50 font-semibold text-slate-700 flex items-center gap-3">
+                <i class="fa-solid fa-circle-info text-indigo-600"></i>
+                <span>Sobre & Infográfico Excimer</span>
+            </a>
             <button onclick="openValidationModal(); toggleMobileMenu();" class="w-full text-center py-2.5 text-xs font-bold uppercase tracking-wider text-sky-700 bg-sky-50 rounded-xl border border-sky-200">
                 <i class="fa-solid fa-shield-halved mr-1"></i> Validar Certificado
             </button>
         </div>
     </header>
 
-    <!-- CONTAINER PRINCIPAL DAS PÁGINAS -->
     <main class="flex-grow">
-
-        <section id="page-dicas" class="page-transition opacity-100 block">
-            <!-- Hero Banner -->
+        <section id="page-dicas">
             <div class="relative bg-gradient-to-br from-slate-900 via-sky-950 to-indigo-950 text-white py-16 px-4 sm:px-6 lg:px-8 overflow-hidden">
                 <div class="absolute inset-0 opacity-20 bg-[radial-gradient(#38bdf8_1px,transparent_1px)] [background-size:16px_16px]"></div>
                 <div class="max-w-7xl mx-auto relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -99,9 +89,9 @@
                             <a href="#simulador" class="px-6 py-3.5 bg-gradient-to-r from-cyan-500 to-sky-600 hover:from-cyan-600 hover:to-sky-700 text-white font-bold rounded-2xl shadow-lg shadow-cyan-500/25 transition flex items-center gap-2 text-sm">
                                 <i class="fa-solid fa-sliders"></i> Simulador de Comprimento de Onda
                             </a>
-                            <button onclick="navigateTo('profissionais')" class="px-6 py-3.5 bg-white/10 hover:bg-white/20 text-white font-semibold rounded-2xl border border-white/20 transition text-sm flex items-center gap-2">
-                                <i class="fa-solid fa-user-doctor"></i> Ver Médicos Certificados
-                            </button>
+                            <a href="sobre.html" class="px-6 py-3.5 bg-white/10 hover:bg-white/20 text-white font-semibold rounded-2xl border border-white/20 transition text-sm flex items-center gap-2">
+                                <i class="fa-solid fa-circle-info"></i> Ver Infográfico & Vídeo
+                            </a>
                         </div>
                     </div>
                     <div class="relative flex justify-center">
@@ -134,82 +124,7 @@
             </div>
 
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-                <div class="text-center max-w-3xl mx-auto mb-12">
-                    <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900">Tecnologias de Fototerapia na Dermatologia</h2>
-                    <p class="mt-2 text-slate-600">Entenda as diferenças essenciais entre cada fonte de luz e suas indicações clínicas comprovadas.</p>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                    <!-- LED Card -->
-                    <div class="bg-white rounded-3xl p-6 border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
-                        <div>
-                            <div class="w-12 h-12 rounded-2xl bg-blue-100 text-blue-600 flex items-center justify-center text-xl mb-4">
-                                <i class="fa-solid fa-lightbulb"></i>
-                            </div>
-                            <h3 class="text-lg font-bold text-slate-900">Fotobiomodulação LED</h3>
-                            <p class="text-xs text-slate-500 mt-1">Luz Não Coerente & Atermia</p>
-                            <p class="text-slate-600 text-sm mt-3 leading-relaxed">
-                                Atua nas mitocôndrias celulares estimulando ATP. É indolor, reduz inflamações, acelera a regeneração tecidual e combate acnes.
-                            </p>
-                        </div>
-                        <div class="mt-6 pt-4 border-t border-slate-100">
-                            <span class="text-xs font-semibold text-blue-600 bg-blue-50 px-2.5 py-1 rounded-lg">Pós-Procedimento & Tratamento Contínuo</span>
-                        </div>
-                    </div>
-
-                    <!-- Laser Ablativo e Não-Ablativo -->
-                    <div class="bg-white rounded-3xl p-6 border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
-                        <div>
-                            <div class="w-12 h-12 rounded-2xl bg-red-100 text-red-600 flex items-center justify-center text-xl mb-4">
-                                <i class="fa-solid fa-bullseye"></i>
-                            </div>
-                            <h3 class="text-lg font-bold text-slate-900">Lasers Dermatológicos</h3>
-                            <p class="text-xs text-slate-500 mt-1">Luz Monocromática e Coerente</p>
-                            <p class="text-slate-600 text-sm mt-3 leading-relaxed">
-                                Dispositivos de alta precisão (CO2, Thulium/Lavieen, Erbium) direcionados a alvos específicos como pigmento, água ou vasos sanguíneos.
-                            </p>
-                        </div>
-                        <div class="mt-6 pt-4 border-t border-slate-100">
-                            <span class="text-xs font-semibold text-red-600 bg-red-50 px-2.5 py-1 rounded-lg">Manchas, Rejuvenescimento e Cicatrizes</span>
-                        </div>
-                    </div>
-
-                    <!-- Luz Intensa Pulsada (LIP / IPL) -->
-                    <div class="bg-white rounded-3xl p-6 border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
-                        <div>
-                            <div class="w-12 h-12 rounded-2xl bg-amber-100 text-amber-600 flex items-center justify-center text-xl mb-4">
-                                <i class="fa-solid fa-sun"></i>
-                            </div>
-                            <h3 class="text-lg font-bold text-slate-900">Luz Pulsada (IPL)</h3>
-                            <p class="text-xs text-slate-500 mt-1">Policromática & Broad Spectrum</p>
-                            <p class="text-slate-600 text-sm mt-3 leading-relaxed">
-                                Emite feixes de luz policromática de alta intensidade. Excelente para harmonizar a coloração cutânea, vasinhos e sardas.
-                            </p>
-                        </div>
-                        <div class="mt-6 pt-4 border-t border-slate-100">
-                            <span class="text-xs font-semibold text-amber-600 bg-amber-50 px-2.5 py-1 rounded-lg">Fotomanchas & Telangiectasias</span>
-                        </div>
-                    </div>
-
-                    <!-- Terapia TFD -->
-                    <div class="bg-white rounded-3xl p-6 border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
-                        <div>
-                            <div class="w-12 h-12 rounded-2xl bg-purple-100 text-purple-600 flex items-center justify-center text-xl mb-4">
-                                <i class="fa-solid fa-atom"></i>
-                            </div>
-                            <h3 class="text-lg font-bold text-slate-900">Terapia Fotodinâmica (TFD)</h3>
-                            <p class="text-xs text-slate-500 mt-1">Luz + Fotosensibilizador</p>
-                            <p class="text-slate-600 text-sm mt-3 leading-relaxed">
-                                Combina substâncias tópicas específicas com luz especial para destruição seletiva de lesões pré-cancerígenas e acne severa.
-                            </p>
-                        </div>
-                        <div class="mt-6 pt-4 border-t border-slate-100">
-                            <span class="text-xs font-semibold text-purple-600 bg-purple-50 px-2.5 py-1 rounded-lg">Tratamento Médico Especializado</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div id="simulador" class="mt-16 bg-white rounded-3xl border border-slate-200 shadow-lg p-6 sm:p-10">
+                <div id="simulador" class="bg-white rounded-3xl border border-slate-200 shadow-lg p-6 sm:p-10">
                     <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-slate-100 pb-6 mb-8">
                         <div>
                             <span class="text-xs font-extrabold uppercase tracking-widest text-sky-600">Ferramenta Interativa</span>
@@ -220,7 +135,6 @@
                         </p>
                     </div>
 
-                    <!-- Botões de Condições -->
                     <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-8">
                         <button onclick="setSimulatedLight('acne')" id="btn-acne" class="sim-btn p-4 rounded-2xl border-2 border-slate-200 hover:border-blue-500 font-bold text-slate-700 transition flex flex-col items-center gap-2 bg-slate-50">
                             <i class="fa-solid fa-bacteria text-xl text-blue-500"></i>
@@ -240,10 +154,9 @@
                         </button>
                     </div>
 
-                    <!-- Display Visual do Espectro -->
                     <div id="sim-display" class="p-8 rounded-3xl bg-slate-900 text-white transition-all duration-500 relative overflow-hidden flex flex-col lg:flex-row items-center justify-between gap-8">
                         <div class="space-y-4 max-w-xl">
-                            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-extrabold uppercase tracking-wider" id="sim-badge">
+                            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-extrabold uppercase tracking-wider border border-slate-700 text-slate-400" id="sim-badge">
                                 SELECIONE UMA CONDIÇÃO
                             </div>
                             <h4 id="sim-title" class="text-2xl sm:text-3xl font-extrabold">Selecione uma opção acima</h4>
@@ -262,7 +175,6 @@
                             </div>
                         </div>
 
-                        <!-- Indicador Luminoso Estilizado -->
                         <div class="flex flex-col items-center justify-center p-6 bg-white/5 rounded-3xl border border-white/10 w-full lg:w-72">
                             <div id="sim-bulb" class="w-24 h-24 rounded-full bg-slate-700 flex items-center justify-center text-4xl text-slate-400 transition-all duration-500 mb-4">
                                 <i class="fa-solid fa-lightbulb"></i>
@@ -271,60 +183,122 @@
                         </div>
                     </div>
                 </div>
-
-                <div class="mt-16 grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <!-- Dicas Pré-Tratamento -->
-                    <div class="bg-sky-50/60 rounded-3xl p-8 border border-sky-100">
-                        <div class="flex items-center gap-3 mb-6">
-                            <div class="w-10 h-10 rounded-xl bg-sky-600 text-white flex items-center justify-center text-lg">
-                                <i class="fa-solid fa-shield-cat"></i>
-                            </div>
-                            <h3 class="text-xl font-bold text-sky-950">Dicas Pré-Tratamento com Luz</h3>
-                        </div>
-                        <ul class="space-y-4 text-sm text-slate-700">
-                            <li class="flex items-start gap-3">
-                                <i class="fa-solid fa-circle-check text-sky-600 mt-0.5"></i>
-                                <span><strong>Evite bronzeamento prévio:</strong> A pele bronzeada possui excesso de melanina ativa, o que pode aumentar o risco de queimaduras ou manchas térmicas.</span>
-                            </li>
-                            <li class="flex items-start gap-3">
-                                <i class="fa-solid fa-circle-check text-sky-600 mt-0.5"></i>
-                                <span><strong>Atenção aos ácidos retinóicos:</strong> Suspenda o uso de ácidos fortes de 3 a 7 dias antes do procedimento conforme orientação do seu médico.</span>
-                            </li>
-                            <li class="flex items-start gap-3">
-                                <i class="fa-solid fa-circle-check text-sky-600 mt-0.5"></i>
-                                <span><strong>Proteção ocular é obrigatória:</strong> Sempre utilize óculos bloqueadores específicos fornecidos na clínica para proteger suas retinas.</span>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <!-- Dicas Pós-Tratamento -->
-                    <div class="bg-indigo-50/60 rounded-3xl p-8 border border-indigo-100">
-                        <div class="flex items-center gap-3 mb-6">
-                            <div class="w-10 h-10 rounded-xl bg-indigo-600 text-white flex items-center justify-center text-lg">
-                                <i class="fa-solid fa-heart-pulse"></i>
-                            </div>
-                            <h3 class="text-xl font-bold text-indigo-950">Dicas Pós-Tratamento com Luz</h3>
-                        </div>
-                        <ul class="space-y-4 text-sm text-slate-700">
-                            <li class="flex items-start gap-3">
-                                <i class="fa-solid fa-circle-check text-indigo-600 mt-0.5"></i>
-                                <span><strong>Filtro solar rigoroso:</strong> Aplique protetor de amplo espectro (FPS 50+) a cada 3 horas, mesmo em ambientes fechados.</span>
-                            </li>
-                            <li class="flex items-start gap-3">
-                                <i class="fa-solid fa-circle-check text-indigo-600 mt-0.5"></i>
-                                <span><strong>Hidratação regeneradora:</strong> Use dermocosméticos calmantes com pantenol ou ácido hialurônico para restaurar a barreira cutânea.</span>
-                            </li>
-                            <li class="flex items-start gap-3">
-                                <i class="fa-solid fa-circle-check text-indigo-600 mt-0.5"></i>
-                                <span><strong>Não remova casquinhas:</strong> Em tratamentos ablativos, deixe as microcrostas caírem naturalmente para evitar cicatrizes.</span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
             </div>
         </section>
-
     </main>
 
+    <!-- Modal de Validação -->
+    <div id="validation-modal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-md w-full p-6 shadow-2xl border border-slate-100 relative space-y-6">
+            <button onclick="closeValidationModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 p-2">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+            <div class="text-center space-y-2">
+                <div class="w-12 h-12 rounded-2xl bg-sky-100 text-sky-600 flex items-center justify-center text-xl mx-auto">
+                    <i class="fa-solid fa-shield-halved"></i>
+                </div>
+                <h3 class="text-xl font-bold text-slate-900">Validar Selo Profissional</h3>
+                <p class="text-xs text-slate-500">Insira o código do selo ou CRM para verificar a autenticidade.</p>
+            </div>
+            <form onsubmit="handleValidation(event)" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Código do Selo / CRM</label>
+                    <input type="text" id="cert-code-input" placeholder="Ex: DR-145890" required class="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm focus:outline-none focus:border-sky-500">
+                </div>
+                <button type="submit" class="w-full py-3 bg-sky-600 hover:bg-sky-700 text-white font-bold rounded-xl text-sm transition">
+                    Verificar Autenticidade
+                </button>
+            </form>
+            <div id="validation-result" class="hidden p-4 rounded-xl text-xs"></div>
+        </div>
+    </div>
+
+    <script>
+        function toggleMobileMenu() {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        }
+
+        const lightData = {
+            acne: {
+                title: "LED Azul (415 nm)",
+                desc: "Atua na destruição da bactéria P. acnes, reduzindo a produção sebácea e a inflamação sem gerar calor.",
+                nm: "415 nm",
+                depth: "Epiderme (Superficial)",
+                badge: "Ação Anti-Bacteriana & Anti-Acne",
+                badgeClass: "bg-blue-500/20 text-blue-300 border-blue-500/30",
+                glowClass: "glow-blue text-blue-400 bg-blue-950/80 border-blue-500"
+            },
+            antiage: {
+                title: "LED Vermelho (630 nm)",
+                desc: "Estimula os fibroblastos a produzirem mais colágeno e elastina, promovendo renovação e firmeza.",
+                nm: "630 nm",
+                depth: "Derme Superficial",
+                badge: "Estímulo de Colágeno & Rejuvenescimento",
+                badgeClass: "bg-red-500/20 text-red-300 border-red-500/30",
+                glowClass: "glow-red text-red-400 bg-red-950/80 border-red-500"
+            },
+            rosacea: {
+                title: "Luz Âmbar / Amarela (590 nm)",
+                desc: "Melhora a circulação sanguínea e linfática, atenua a vermelhidão e acalma a pele reativa.",
+                nm: "590 nm",
+                depth: "Derme Média",
+                badge: "Calmante & Ação Vascular",
+                badgeClass: "bg-amber-500/20 text-amber-300 border-amber-500/30",
+                glowClass: "glow-amber text-amber-400 bg-amber-950/80 border-amber-500"
+            },
+            cicatriz: {
+                title: "Luz Infravermelha (830 nm)",
+                desc: "Penetra profundamente promovendo regeneração celular rápida, cicatrização e alívio do processo inflamatório.",
+                nm: "830 nm",
+                depth: "Derme Profunda & Hipoderme",
+                badge: "Regeneração Tecidual Profunda",
+                badgeClass: "bg-purple-500/20 text-purple-300 border-purple-500/30",
+                glowClass: "glow-purple text-purple-400 bg-purple-950/80 border-purple-500"
+            }
+        };
+
+        function setSimulatedLight(type) {
+            const data = lightData[type];
+            if (!data) return;
+
+            document.getElementById('sim-title').innerText = data.title;
+            document.getElementById('sim-desc').innerText = data.desc;
+            document.getElementById('sim-nm').innerText = data.nm;
+            document.getElementById('sim-depth').innerText = data.depth;
+
+            const badge = document.getElementById('sim-badge');
+            badge.innerText = data.badge;
+            badge.className = `inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-extrabold uppercase tracking-wider border ${data.badgeClass}`;
+
+            const bulb = document.getElementById('sim-bulb');
+            const bulbText = document.getElementById('sim-bulb-text');
+            bulb.className = `w-24 h-24 rounded-full flex items-center justify-center text-4xl transition-all duration-500 mb-4 border ${data.glowClass}`;
+            bulbText.innerText = "Luz Ativa";
+            bulbText.className = "text-xs font-bold uppercase text-emerald-400 tracking-wider";
+        }
+
+        function openValidationModal() {
+            document.getElementById('validation-modal').classList.remove('hidden');
+        }
+
+        function closeValidationModal() {
+            document.getElementById('validation-modal').classList.add('hidden');
+        }
+
+        function handleValidation(e) {
+            e.preventDefault();
+            const input = document.getElementById('cert-code-input').value.trim();
+            const result = document.getElementById('validation-result');
+            result.classList.remove('hidden');
+
+            if (input.length >= 4) {
+                result.className = "p-4 rounded-xl text-xs bg-emerald-50 text-emerald-800 border border-emerald-200 block";
+                result.innerHTML = `<strong><i class="fa-solid fa-circle-check mr-1"></i> Certificado Válido!</strong><br>Selo referente a <strong>${input}</strong> encontra-se devidamente ativo no sistema.`;
+            } else {
+                result.className = "p-4 rounded-xl text-xs bg-rose-50 text-rose-800 border border-rose-200 block";
+                result.innerHTML = `<strong><i class="fa-solid fa-triangle-exclamation mr-1"></i> Código Inválido</strong><br>Por favor, verifique a numeração digitada.`;
+            }
+        }
+    </script>
 </body>
 </html>
